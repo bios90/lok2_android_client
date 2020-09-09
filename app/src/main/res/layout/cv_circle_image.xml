@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+        <import type="com.dimfcompany.akcslclient.R" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="999dp"
+        app:cardElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false">
+
+        <ImageView
+            android:id="@+id/img_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user_def"
+            android:tint="@color/gray4" />
+
+        <ImageView
+            android:id="@+id/img_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@{BuilderBg.getSquareRippleTransRed()}"
+            android:foreground="@{BuilderBg.getSquareRippleTransRed()}"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.akcslclient.R" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main"
+        android:fitsSystemWindows="false">
+
+        <include
+            android:id="@+id/cv_avatar"
+            layout="@layout/cv_circle_image"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_above="@id/lal_inputs"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:id="@+id/lal_inputs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/name"
+                android:textColor="@color/gray5" />
+
+            <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+                android:id="@+id/et_first_name"
+                style="@style/EditText"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
+                android:background="@{BuilderBg.getStrokedEt()}"
+                android:gravity="center" />
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/surname"
+                android:textColor="@color/gray5" />
+
+
+            <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+                android:id="@+id/et_last_name"
+                style="@style/EditText"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
+                android:background="@{BuilderBg.getStrokedEt()}"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tv_email_title"
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/email"
+                android:textColor="@color/gray5" />
+
+
+            <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+                android:id="@+id/et_email"
+                style="@style/EditText"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
+                android:background="@{BuilderBg.getStrokedEt()}"
+                android:gravity="center"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/password"
+                android:textColor="@color/gray5" />
+
+
+            <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+                android:id="@+id/et_password_1"
+                style="@style/EditText"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
+                android:background="@{BuilderBg.getStrokedEt()}"
+                android:gravity="center"
+                android:inputType="textPassword" />
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/repeat_password"
+                android:textColor="@color/gray5" />
+
+            <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+                android:id="@+id/et_password_2"
+                style="@style/EditText"
+                android:layout_width="240dp"
+                android:layout_height="38dp"
+                android:background="@{BuilderBg.getStrokedEt()}"
+                android:gravity="center"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_register"
+            style="@style/TvReg.L"
+            android:layout_width="240dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/lal_inputs"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="@{BuilderBg.getSimpleDrawableRipple(4f,BuilderBg.gc(R.color.red),BuilderBg.gc(R.color.red_dark))}"
+            android:text="@string/register"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_privacy"
+            style="@style/TvReg.L"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:background="@{BuilderBg.getSimpleDrawableRipple(0f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.gray1))}"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</layout>

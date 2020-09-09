@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.akcslclient.R" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@{BuilderBg.getRounded4White()}"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TvBold.Xl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_logo"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="left"
+                android:textColor="@color/red"
+                tools:text="Twisteru" />
+
+            <TextView
+                android:id="@+id/tv_text"
+                style="@style/TvReg.M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:gravity="left"
+                android:maxLines="4"
+                android:textColor="@color/gray5"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore" />
+
+            <TextView
+                android:id="@+id/tv_updated"
+                style="@style/TvBold.S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_text"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/gray7"
+                tools:text="Обновлено: 22 августа 2020" />
+
+            <TextView
+                android:id="@+id/tv_documens_count"
+                style="@style/TvBold.S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_text"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/gray7"
+                tools:text="Файлов:8" />
+
+            <ImageView
+                android:id="@+id/img_new"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/img_new" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

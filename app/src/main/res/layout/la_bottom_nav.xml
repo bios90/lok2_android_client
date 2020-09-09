@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.akcslclient.R" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="22dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/lar_categories"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="@{BuilderBg.getSquareRippleTransRed()}">
+
+            <TextView
+                style="@style/TvFawLight.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/faw_list"
+                android:textColor="@color/gray5" />
+
+            <TextView
+                style="@style/TvReg.S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/categories"
+                android:textColor="@color/gray5" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lar_favorite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="@{BuilderBg.getSquareRippleTransRed()}">
+
+            <TextView
+                style="@style/TvFawLight.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/faw_heart"
+                android:textColor="@color/gray5" />
+
+            <TextView
+                style="@style/TvReg.S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/favorite"
+                android:textColor="@color/gray5" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lar_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="@{BuilderBg.getSquareRippleTransRed()}">
+
+
+            <TextView
+                style="@style/TvFawLight.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/faw_search"
+                android:textColor="@color/gray5" />
+
+            <TextView
+                style="@style/TvReg.S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/search"
+                android:textColor="@color/gray5" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lar_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="@{BuilderBg.getSquareRippleTransRed()}">
+
+            <TextView
+                style="@style/TvFawLight.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/faw_user"
+                android:textColor="@color/gray5" />
+
+            <TextView
+                style="@style/TvReg.S"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:text="@string/profile"
+                android:textColor="@color/gray5" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.akcslclient.R" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="112dp"
+            android:layout_above="@id/tv_email_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="44dp"
+            android:src="@drawable/ei_kei_logo" />
+
+        <TextView
+            android:id="@+id/tv_email_title"
+            style="@style/TvReg.L"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/et_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="@string/email"
+            android:textColor="@color/gray5" />
+
+
+        <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+            android:id="@+id/et_email"
+            style="@style/EditText"
+            android:layout_width="240dp"
+            android:layout_height="38dp"
+            android:layout_above="@id/tv_password_title"
+            android:layout_centerHorizontal="true"
+            android:background="@{BuilderBg.getStrokedEt()}"
+            android:gravity="center"
+            android:inputType="textEmailAddress" />
+
+        <View
+            android:id="@+id/view_center"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_password_title"
+            style="@style/TvReg.L"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/password"
+            android:textColor="@color/gray5" />
+
+        <com.dimfcompany.akcslclient.ui.custom_views.MyEtWithObserv
+            android:id="@+id/et_password"
+            style="@style/EditText"
+            android:layout_width="240dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/tv_password_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:background="@{BuilderBg.getStrokedEt()}"
+            android:gravity="center"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            style="@style/TvReg.L"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:padding="6dp"
+            android:background="@{BuilderBg.getSquareRippleTransRed()}"
+            android:text="@string/forgot_password"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            style="@style/TvReg.L"
+            android:layout_width="240dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/tv_forgot_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="@{BuilderBg.getSimpleDrawableRipple(4f,BuilderBg.gc(R.color.red),BuilderBg.gc(R.color.red_dark))}"
+            android:text="@string/enter"
+            android:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/tv_register"
+            style="@style/TvReg.L"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:background="@{BuilderBg.getSimpleDrawableRipple(0f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.gray1))}"
+            android:text="@string/register"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</layout>

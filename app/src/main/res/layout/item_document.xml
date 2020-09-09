@@ -1,0 +1,181 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.akcslclient.R" />
+    </data>
+
+    <com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout
+        android:id="@+id/la_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:contentView="@id/cv_content"
+        app:rightMenuView="@id/lal_right">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@{BuilderBg.getRounded4White()}"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_logo"
+                    android:layout_width="112dp"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ei_kei_logo"
+                    app:layout_constraintBottom_toBottomOf="@id/view_bottom"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/lar_top"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    app:layout_constraintLeft_toRightOf="@id/img_logo"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/TvBold.L"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:layout_toLeftOf="@id/lal_icons"
+                        android:gravity="left"
+                        android:textColor="@color/gray7"
+                        tools:text="Стрипсы" />
+
+                    <LinearLayout
+                        android:id="@+id/lal_icons"
+                        my_divider_color="@{R.color.transparent}"
+                        my_divider_size="@{8f}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:id="@+id/tv_link"
+                            style="@style/TvFawLight.L"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faw_link"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_video"
+                            style="@style/TvFawLight.L"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faw_video"
+                            android:textColor="@color/red" />
+
+                        <TextView
+                            android:id="@+id/tv_pdf"
+                            style="@style/TvFawLight.L"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faw_pdf"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_text"
+                    style="@style/TvReg.M"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="12dp"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:maxLines="2"
+                    android:textColor="@color/gray5"
+                    app:layout_constraintLeft_toRightOf="@id/img_logo"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lar_top"
+                    app:layout_goneMarginTop="8dp"
+                    tools:text="Working together with @Triyandi Saputra doing an exploration about KFC delivery app. M sdfkgmsldkmgskdfm gsd fgore screen and animation coming" />
+
+                <TextView
+                    android:id="@+id/tv_updated"
+                    style="@style/TvBold.S"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:textColor="@color/gray7"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_text"
+                    tools:text="Обновлено: 22 августа 2020" />
+
+                <ImageView
+                    android:id="@+id/img_new"
+                    android:src="@drawable/img_new"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view_bottom"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_updated" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/lal_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_like_dislike"
+                style="@style/TvFawLight.Xl"
+                android:layout_width="92dp"
+                android:layout_height="50dp"
+                android:elevation="12dp"
+                android:text="@string/faw_trash"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout>
+
+</layout>

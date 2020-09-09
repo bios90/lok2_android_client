@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.akcslclient.R" />
+    </data>
+
+    <RelativeLayout
+        android:fitsSystemWindows="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray0"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <ImageView
+            android:src="@drawable/img_red_squares"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"/>
+
+        <View
+            android:id="@+id/view_fake_status"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <com.dimfcompany.akcslclient.ui.custom_views.ViewPagerNotScrollable
+            android:id="@+id/vp_main"
+            android:layout_below="@id/view_fake_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/la_bottom_nav" />
+
+        <include
+            android:id="@+id/la_bottom_nav"
+            layout="@layout/la_bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</layout>
