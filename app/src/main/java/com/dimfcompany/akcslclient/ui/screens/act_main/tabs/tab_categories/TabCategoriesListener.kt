@@ -4,5 +4,5 @@ import android.widget.Adapter
 
 interface TabCategoriesListener
 {
-
+    fun swipedToRefresh()
 }

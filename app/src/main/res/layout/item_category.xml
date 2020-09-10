@@ -29,7 +29,7 @@
                 android:id="@+id/img_logo"
                 android:layout_width="match_parent"
                 android:layout_height="144dp"
-                android:scaleType="centerCrop" />
+                android:scaleType="fitCenter" />
 
             <TextView
                 android:id="@+id/tv_title"

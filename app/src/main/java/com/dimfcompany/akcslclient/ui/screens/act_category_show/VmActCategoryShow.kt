@@ -91,8 +91,13 @@ class VmActCategoryShow : BaseViewModel()
     }
 
 
-    inner class ViewListener : CardDocument.Listener
+    inner class ViewListener : ActCategoryShowListener, CardDocument.Listener
     {
+        override fun swipedToRefresh()
+        {
+            reloadDocuments()
+        }
+
         override fun clickedLikeDislike(item: ModelDocument, bnd: ItemDocumentBinding)
         {
             BaseVmHelper.clickedDocumentLikeDislike(item, this@VmActCategoryShow)

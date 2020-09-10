@@ -23,7 +23,7 @@ class ActSplash : BaseActivity()
 
         Glide.with(img_splash).load(R.drawable.img_splash).into(img_splash)
 
-        runActionWithDelay(lifecycleScope, 3000,
+        runActionWithDelay(lifecycleScope, 4000,
             {
                 val intent: Intent
                 if (SharedPrefsManager.pref_current_user.get().value != null)

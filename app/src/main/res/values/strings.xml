@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lok2Client</string>
+    <string name="app_name">Chronos</string>
     <string name="loading">Загрузка</string>
     <string name="password">Пароль</string>
     <string name="enter">Войти</string>

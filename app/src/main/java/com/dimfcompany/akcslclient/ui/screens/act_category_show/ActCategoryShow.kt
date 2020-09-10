@@ -61,7 +61,6 @@ class ActCategoryShow : BaseActivity()
                 .mainThreaded()
                 .subscribe(
                     {
-                        Log.e("ActCategoryShow", "setEvents: Here got")
                         bnd_act_category_show.tvHeader.text = it.value
                     })
                 .disposeBy(composite_disposable)
@@ -70,7 +69,7 @@ class ActCategoryShow : BaseActivity()
                 .mainThreaded()
                 .subscribe(
                     {
-                        Log.e("ActCategoryShow", "setEvents: Hererer ${it.items.size}")
+                        bnd_act_category_show.srlDocuments.isRefreshing = false
                         adapter_documents.setItems(it)
                     })
                 .disposeBy(composite_disposable)
@@ -88,5 +87,11 @@ class ActCategoryShow : BaseActivity()
         bnd_act_category_show.recDocuments.adapter = adapter_documents
         bnd_act_category_show.recDocuments.layoutManager = LinearLayoutManager(this)
         bnd_act_category_show.recDocuments.setDivider(getColorMy(R.color.transparent), dp2pxInt(8f))
+
+        bnd_act_category_show.srlDocuments.setColorSchemeColors(getColorMy(R.color.red_dark), getColorMy(R.color.red), getColorMy(R.color.red_light))
+        bnd_act_category_show.srlDocuments.setOnRefreshListener(
+            {
+                vm_act_category_show.ViewListener().swipedToRefresh()
+            })
     }
 }

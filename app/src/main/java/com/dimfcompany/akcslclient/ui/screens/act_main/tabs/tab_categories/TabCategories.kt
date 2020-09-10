@@ -19,7 +19,7 @@ class TabCategories(act_main: ActMain)
     val composite_disposable = act_main.composite_disposable
     val bnd_tab_categories: LaCategoriesBinding
     val vm_tab_categories: VmTabCategories
-    lateinit var adapter_category: BaseRvAdapter<ItemCategoryBinding, ModelCategory, BaseCardListener<ItemCategoryBinding,ModelCategory>>
+    lateinit var adapter_category: BaseRvAdapter<ItemCategoryBinding, ModelCategory, BaseCardListener<ItemCategoryBinding, ModelCategory>>
 
     init
     {
@@ -44,6 +44,12 @@ class TabCategories(act_main: ActMain)
         bnd_tab_categories.recCategories.adapter = adapter_category
         bnd_tab_categories.recCategories.layoutManager = LinearLayoutManager(bnd_tab_categories.root.context)
         bnd_tab_categories.recCategories.setDivider(getColorMy(R.color.transparent), dp2pxInt(8f))
+
+        bnd_tab_categories.srlCategories.setColorSchemeColors(getColorMy(R.color.red_dark), getColorMy(R.color.red), getColorMy(R.color.red_light))
+        bnd_tab_categories.srlCategories.setOnRefreshListener(
+            {
+                vm_tab_categories.ViewListener().swipedToRefresh()
+            })
     }
 
     private fun setEvents()
@@ -52,6 +58,7 @@ class TabCategories(act_main: ActMain)
                 .mainThreaded()
                 .subscribe(
                     {
+                        bnd_tab_categories.srlCategories.isRefreshing = false
                         adapter_category.setItems(it)
                     })
                 .disposeBy(composite_disposable)

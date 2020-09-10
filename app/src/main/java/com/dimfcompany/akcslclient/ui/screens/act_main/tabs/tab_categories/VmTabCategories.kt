@@ -54,7 +54,7 @@ class VmTabCategories : BaseViewModel()
             })
     }
 
-    inner class ViewListener : BaseCardListener<ItemCategoryBinding, ModelCategory>
+    inner class ViewListener : TabCategoriesListener,  BaseCardListener<ItemCategoryBinding, ModelCategory>
     {
         override fun clickedCard(item: ModelCategory, bnd: ItemCategoryBinding)
         {
@@ -63,6 +63,11 @@ class VmTabCategories : BaseViewModel()
                     .setActivityToStart(ActCategoryShow::class.java)
                     .addParam(Constants.Extras.CATEGORY_ID, category_id)
                     .sendInVm(this@VmTabCategories)
+        }
+
+        override fun swipedToRefresh()
+        {
+            reloadCategories()
         }
     }
 }
