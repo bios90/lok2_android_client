@@ -37,6 +37,7 @@ class ActMain : BaseActivity()
         getActivityComponent().inject(this)
         bnd_act_main = DataBindingUtil.setContentView(this, R.layout.act_main)
         vm_act_main = my_vm_factory.getViewModel(VmActMain::class.java)
+        setBaseVmActions(vm_act_main)
 
         setViewPager()
         setEvents()

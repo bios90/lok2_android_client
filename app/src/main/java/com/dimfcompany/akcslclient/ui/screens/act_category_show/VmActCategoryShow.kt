@@ -19,7 +19,6 @@ import com.dimfcompany.akcslclient.logic.utils.builders.BuilderAlerter
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderDownloader
 import com.dimfcompany.akcslclient.logic.utils.files.FileManager
 import com.dimfcompany.akcslclient.logic.utils.files.MyFileItem
-import com.dimfcompany.barista.logic.builders.BuilderDialogBottom
 import com.justordercompany.barista.logic.utils.BuilderPermRequest
 import com.justordercompany.barista.logic.utils.PermissionManager
 import io.reactivex.subjects.BehaviorSubject

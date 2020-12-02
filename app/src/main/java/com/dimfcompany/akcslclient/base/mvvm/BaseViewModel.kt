@@ -11,14 +11,13 @@ import com.dimfcompany.akcslclient.base.extensions.getStringMy
 import com.dimfcompany.akcslclient.logic.BtnAction
 import com.dimfcompany.akcslclient.logic.MessagesManager
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderAlerter
+import com.dimfcompany.akcslclient.logic.utils.builders.BuilderDialogBottom
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderDialogMy
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderIntent
 import com.dimfcompany.akcslclient.logic.utils.files.MyFileItem
 import com.dimfcompany.akcslclient.networking.BaseNetworker
 import com.dimfcompany.akcslclient.networking.apis.ApiAuth
 import com.dimfcompany.akcslclient.networking.apis.ApiCategories
-import com.dimfcompany.akcslclient.ui.screens.act_first.ActFirst
-import com.dimfcompany.barista.logic.builders.BuilderDialogBottom
 import com.justordercompany.barista.logic.images.ImageCameraManager
 import com.justordercompany.barista.logic.utils.BuilderPermRequest
 import com.justordercompany.barista.logic.utils.PermissionManager
@@ -61,22 +60,14 @@ open class BaseViewModel : ViewModel()
 
     fun setBaseVmEvents()
     {
-        bus_main_events.ps_to_logout
-                .subscribe(
-                    {
-                        BuilderIntent()
-                                .setActivityToStart(ActFirst::class.java)
-                                .addFlag(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                                .sendInVm(this)
-                    })
-                .disposeBy(composite_disposable)
+
     }
 
     fun checkPermissions(permissions: List<String>, action_success: () -> Unit)
     {
         val text_blocked = getStringMy(R.string.for_full_work_need_permissions)
         BuilderPermRequest()
-                .setPermissions(PermissionManager.permissions_camera)
+                .setPermissions(permissions)
                 .setActionBlockedNow(
                     {
                         val dialog = MessagesManager.getBuilderPermissionsBlockedNow(text_blocked,

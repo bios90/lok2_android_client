@@ -99,8 +99,7 @@ class VmActFirst : BaseViewModel()
 
                     if (it.email_verified != true)
                     {
-                        val errors = arrayListOf("Необходимо подтвердить email")
-                        val message = StringManager.listOfStringToSingle(errors)
+                        val message = "Необходимо подтвердить email"
                         val builder = BuilderAlerter.getRedBuilder(message)
                         ps_to_show_alerter.onNext(builder)
                         return@makeLogin

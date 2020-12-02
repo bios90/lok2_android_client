@@ -1,6 +1,7 @@
 package com.dimfcompany.akcslclient.ui.screens.act_register
 
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.dimfcompany.akcslclient.R
 import com.dimfcompany.akcslclient.base.BaseActivity
@@ -72,6 +73,7 @@ class ActRegister : BaseActivity()
         vm_act_register.bs_avatar
                 .subscribe(
                     {
+                        Log.e("ActRegister", "setEvents: Got image newwww ${it.value?.image_url}")
                         val url = it.value?.image_url ?: return@subscribe
                         GlideManager.loadImage(bnd_act_register.cvAvatar.imgImg, url)
                     })

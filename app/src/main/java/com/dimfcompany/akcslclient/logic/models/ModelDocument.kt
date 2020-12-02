@@ -10,7 +10,6 @@ import java.util.*
 
 class ModelDocument(
         override var id: Long?,
-        var category_id: Long?,
         @SerializedName("created_at")
         override var created: Date?,
         @SerializedName("updated_at")

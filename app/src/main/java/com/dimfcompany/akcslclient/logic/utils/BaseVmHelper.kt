@@ -10,10 +10,10 @@ import com.dimfcompany.akcslclient.base.mvvm.BaseViewModel
 import com.dimfcompany.akcslclient.logic.BtnAction
 import com.dimfcompany.akcslclient.logic.SharedPrefsManager
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderAlerter
+import com.dimfcompany.akcslclient.logic.utils.builders.BuilderDialogBottom
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderDownloader
 import com.dimfcompany.akcslclient.logic.utils.files.FileManager
 import com.dimfcompany.akcslclient.logic.utils.files.MyFileItem
-import com.dimfcompany.barista.logic.builders.BuilderDialogBottom
 
 class BaseVmHelper
 {

@@ -1,5 +1,6 @@
 package com.dimfcompany.akcslclient.base
 
+import android.util.Log
 import android.view.View
 import com.dimfcompany.akcslclient.logic.utils.DateManager
 import com.dimfcompany.akcslclient.logic.utils.getHourMinuteDiff
@@ -27,6 +28,8 @@ fun ArrayList<out ObjectWithId>.getPosOfObject(id: Long): Int?
 
     return null
 }
+
+
 
 
 interface ObjectWithDates

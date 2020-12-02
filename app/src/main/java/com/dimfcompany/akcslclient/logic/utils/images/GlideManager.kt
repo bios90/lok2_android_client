@@ -48,6 +48,7 @@ class GlideManager
             {
                 override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean
                 {
+                    e?.printStackTrace()
                     if(show_failed_images)
                     {
                         if (!isNetworkAvailable())
@@ -65,6 +66,7 @@ class GlideManager
 
                 override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean
                 {
+                    Log.e("GlideManager", "onResourceReady: successsss")
                     return false
                 }
             })

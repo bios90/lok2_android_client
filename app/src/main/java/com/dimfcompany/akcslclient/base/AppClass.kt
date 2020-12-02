@@ -8,7 +8,10 @@ import com.dimfcompany.akcslclient.di.application.ComponentApplication
 import com.dimfcompany.akcslclient.di.application.DaggerComponentApplication
 import com.dimfcompany.akcslclient.logic.utils.DateManager
 
+//Todo check logout does not work
 //Todo remove not needed loggers!!
+//Todo remoce CURL for release
+
 class AppClass : Application()
 {
     companion object

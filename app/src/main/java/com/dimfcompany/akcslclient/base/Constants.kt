@@ -22,7 +22,7 @@ class Constants
             {
                 if (test_mode)
                 {
-                    return "http://192.168.1.67/akcsl/"
+                    return "http://192.168.1.68/akcsl/"
                 }
                 else
                 {

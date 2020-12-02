@@ -1,6 +1,7 @@
 package com.justordercompany.barista.ui.dialogs
 
 import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,7 @@ import com.dimfcompany.akcslclient.base.extensions.*
 import com.dimfcompany.akcslclient.databinding.DialogBottomSheetRoundedBinding
 import com.dimfcompany.akcslclient.databinding.LaBottomSheetBtnBinding
 import com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg
-import com.dimfcompany.barista.logic.builders.BuilderDialogBottom
+import com.dimfcompany.akcslclient.logic.utils.builders.BuilderDialogBottom
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -140,4 +141,5 @@ class DialogBottomSheetRounded(
             bnd_dialog.laBtns.addView(lar_btn.root)
         }
     }
+
 }

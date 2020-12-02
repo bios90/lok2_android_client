@@ -1,7 +1,10 @@
 package com.dimfcompany.akcslclient.logic.utils.builders
 
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.IntentCompat
 import com.blogspot.atifsoftwares.animatoolib.Animatoo
 import com.dimfcompany.akcslclient.base.enums.TypeActivityAnim
 import com.dimfcompany.akcslclient.base.extensions.myPutExtra
@@ -20,7 +23,7 @@ class BuilderIntent()
     private var ok_lambda: ((Intent?) -> Unit)? = null
     private var cancel_lambda: ((Intent?) -> Unit)? = null
     private var params: ArrayList<Pair<String, Any?>> = ArrayList()
-    private var flags: ArrayList<Int> = ArrayList()
+    private var flags: Int? = null
     private var on_start_action: (() -> Unit)? = null
     private var type_anim: TypeActivityAnim? = null
     private var slider: TypeSlider? = null
@@ -56,9 +59,9 @@ class BuilderIntent()
         return this
     }
 
-    fun addFlag(flag: Int): BuilderIntent
+    fun setFlags(flags: Int): BuilderIntent
     {
-        flags.add(flag)
+        this.flags = flags
         return this
     }
 
@@ -103,11 +106,16 @@ class BuilderIntent()
                     })
             })
 
-        flags.forEach(
-            { flag ->
-
-                intent.addFlags(flag)
+        flags?.let(
+            {
+                intent.flags = it
             })
+//        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//        flags.forEach(
+//            { flag ->
+//
+//                intent.addFlags(flag)
+//            })
 
         if (ok_lambda != null || cancel_lambda != null)
         {

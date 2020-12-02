@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.dimfcompany.akcslclient.logic.utils.builders.BuilderBg" />
         <import type="com.dimfcompany.akcslclient.R" />
     </data>
 

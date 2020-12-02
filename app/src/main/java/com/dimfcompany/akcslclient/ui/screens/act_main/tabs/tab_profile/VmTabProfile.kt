@@ -26,8 +26,6 @@ class VmTabProfile : BaseViewModel()
         AppClass.app_component.inject(this)
         setBaseVmEvents()
 
-        setBaseVmEvents()
-
         reloadUserData()
     }
 

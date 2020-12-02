@@ -266,7 +266,7 @@ fun openPdfIntent(uri: Uri)
 
     val chooser = Intent.createChooser(intent, "Открыть pdf")
     chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    chooser.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+    chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     try
     {
         AppClass.app.startActivity(chooser)

@@ -170,7 +170,6 @@ open class BaseActivity : AppCompatActivity()
                 .mainThreaded()
                 .subscribe(
                     {
-
                         val dialog = DialogBottomSheetRounded(it)
                         dialog.show(this.supportFragmentManager, null)
                         dialog.isCancelable = it.cancel_on_touch_outside

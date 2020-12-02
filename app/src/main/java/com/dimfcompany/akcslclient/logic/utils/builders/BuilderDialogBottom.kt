@@ -1,8 +1,7 @@
-package com.dimfcompany.barista.logic.builders
+package com.dimfcompany.akcslclient.logic.utils.builders
 
 import com.dimfcompany.akcslclient.base.mvvm.BaseViewModel
 import com.dimfcompany.akcslclient.logic.BtnAction
-
 
 class BuilderDialogBottom
 {
@@ -48,7 +47,7 @@ class BuilderDialogBottom
             this.dim_background = dim_background
         })
 
-    fun sendInVm(vm:BaseViewModel)
+    fun sendInVm(vm: BaseViewModel)
     {
         vm.ps_to_show_bottom_dialog.onNext(this)
     }

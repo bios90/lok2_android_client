@@ -31,7 +31,10 @@ class DiffCategories(items_new: List<ModelCategory>, items_old: List<ModelCatego
             return false
         }
 
-        //Todo make later same for files count
+        if(item_new.documents?.size != item_old.documents?.size)
+        {
+            return false
+        }
 
         return true
     }

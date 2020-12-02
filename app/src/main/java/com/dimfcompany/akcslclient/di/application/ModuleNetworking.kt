@@ -9,6 +9,7 @@ import com.dimfcompany.akcslclient.networking.apis.ApiCategories
 import com.dimfcompany.akcslclient.networking.apis.ApiGlobal
 import dagger.Module
 import dagger.Provides
+import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -51,9 +52,9 @@ class ModuleNetworking
     fun provideOkHttpClient(interceptor: MyInterceptor, log_interceptor: HttpLoggingInterceptor, curl_interceptor: CurlLoggerInterceptor): OkHttpClient
     {
         val httpClientBuilder = OkHttpClient.Builder()
-//        httpClientBuilder.addInterceptor(interceptor)
-        httpClientBuilder.addInterceptor(log_interceptor)
-        httpClientBuilder.addInterceptor(curl_interceptor)
+        httpClientBuilder.addInterceptor(interceptor)
+//        httpClientBuilder.addInterceptor(log_interceptor)
+//        httpClientBuilder.addInterceptor(curl_interceptor)
         httpClientBuilder.callTimeout(120, TimeUnit.SECONDS)
         httpClientBuilder.readTimeout(120, TimeUnit.SECONDS)
         httpClientBuilder.writeTimeout(120, TimeUnit.SECONDS)

@@ -99,6 +99,8 @@ class BuilderNet<T : Any>
             this.scope = scope
         })
 
+
+
     private var finally_action =
             {
                 if (base_vm != null)
@@ -155,7 +157,7 @@ class BuilderNet<T : Any>
 
             finally_action()
 
-            if(action_error != null)
+            if (action_error != null)
             {
                 action_error?.invoke(throwable)
             }
@@ -208,7 +210,8 @@ class BuilderNet<T : Any>
                 }).join()
             }
 
-            val response_as_str = async(Dispatchers.IO, block =
+
+            val response_as_str = scope!!.async(Dispatchers.IO, block =
             {
                 action_response_body!!().getBodyAsStr()
             }).await()
