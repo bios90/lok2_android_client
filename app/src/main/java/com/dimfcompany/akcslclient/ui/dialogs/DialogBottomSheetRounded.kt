@@ -71,7 +71,6 @@ class DialogBottomSheetRounded(
 
         dialog?.setNavigationBarColor(getColorMy(R.color.white))
 
-
         if (builder.title == null && builder.text == null)
         {
             bnd_dialog.lalTop.visibility = View.GONE

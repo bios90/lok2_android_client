@@ -137,9 +137,9 @@
 
                 <ImageView
                     android:id="@+id/img_new"
-                    android:src="@drawable/img_new"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
+                    android:src="@drawable/img_new"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

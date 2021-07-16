@@ -126,7 +126,6 @@ open class BaseActivity : AppCompatActivity()
                 .mainThreaded()
                 .subscribe(
                     {
-
                         it.show(this)
                     })
                 .disposeBy(composite_disposable)

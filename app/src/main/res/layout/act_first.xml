@@ -76,6 +76,7 @@
             android:inputType="textPassword" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/tv_forgot_password"
             style="@style/TvReg.L"
             android:layout_width="240dp"

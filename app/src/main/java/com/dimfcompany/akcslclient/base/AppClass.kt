@@ -33,6 +33,5 @@ class AppClass : Application()
         gson = GsonBuilder()
                 .setDateFormat(DateManager.FORMAT_FOR_SERVER_LARAVEL)
                 .create()
-
     }
 }

@@ -108,4 +108,14 @@ open class BaseViewModel : ViewModel()
                         .sendInVm(this)
             })
     }
+
+    fun showPrivacyPolicy()
+    {
+        BuilderDialogMy()
+                .setViewId(R.layout.la_dialog_scrollable_tv)
+                .setTitle(getStringMy(R.string.privacy_policy))
+                .setText(getStringMy(R.string.privacy_policy_text))
+                .setBtnOk(BtnAction(getStringMy(R.string.its_clear), {}))
+                .sendInVm(this)
+    }
 }

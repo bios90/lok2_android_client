@@ -19,6 +19,7 @@ import com.dimfcompany.akcslclient.logic.utils.strings.StringManager
 import com.dimfcompany.akcslclient.ui.screens.act_main.ActMain
 import com.dimfcompany.akcslclient.ui.screens.act_register.ActRegister
 import io.reactivex.subjects.BehaviorSubject
+import javax.inject.Inject
 
 class VmActFirst : BaseViewModel()
 {
@@ -50,6 +51,7 @@ class VmActFirst : BaseViewModel()
     {
         override fun clickedForgotPass()
         {
+            return
             BuilderDialogMy()
                     .setTitle(getStringMy(R.string.password_recover))
                     .setText(getStringMy(R.string.for_password_recover))
@@ -97,13 +99,13 @@ class VmActFirst : BaseViewModel()
             base_networker.makeLogin(email!!, password!!, fb_token,
                 {
 
-                    if (it.email_verified != true)
-                    {
-                        val message = "Необходимо подтвердить email"
-                        val builder = BuilderAlerter.getRedBuilder(message)
-                        ps_to_show_alerter.onNext(builder)
-                        return@makeLogin
-                    }
+//                    if (it.email_verified != true)
+//                    {
+//                        val message = "Необходимо подтвердить email"
+//                        val builder = BuilderAlerter.getRedBuilder(message)
+//                        ps_to_show_alerter.onNext(builder)
+//                        return@makeLogin
+//                    }
 
                     SharedPrefsManager.pref_current_user.asConsumer().accept(it.asOptional())
                     checkLogin()
@@ -125,7 +127,7 @@ class VmActFirst : BaseViewModel()
 
                             if (it?.getBooleanExtra(Constants.Extras.REGISTER_MADE, false) == true)
                             {
-                                val builder_aleter = BuilderAlerter.getGreenBuilder("Успешная регистрация. Для завершения пройдите во ссылке в письме.")
+                                val builder_aleter = BuilderAlerter.getGreenBuilder("Поздравляем вы зарегистрированы в приложении Хронос. Вы сможете войти после одобрения от администратора")
                                 ps_to_show_alerter.onNext(builder_aleter)
                             }
                         })

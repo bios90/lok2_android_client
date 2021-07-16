@@ -52,12 +52,7 @@ class VmTabProfile : BaseViewModel()
     {
         override fun clickedPrivacyPolicy()
         {
-            BuilderDialogMy()
-                    .setViewId(R.layout.la_dialog_scrollable_tv)
-                    .setTitle(getStringMy(R.string.privacy_policy))
-                    .setText(getStringMy(R.string.privacy_policy_text))
-                    .setBtnOk(BtnAction(getStringMy(R.string.its_clear), {}))
-                    .sendInVm(this@VmTabProfile)
+            showPrivacyPolicy()
         }
 
         override fun clickedLogout()

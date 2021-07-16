@@ -73,7 +73,6 @@ class ActRegister : BaseActivity()
         vm_act_register.bs_avatar
                 .subscribe(
                     {
-                        Log.e("ActRegister", "setEvents: Got image newwww ${it.value?.image_url}")
                         val url = it.value?.image_url ?: return@subscribe
                         GlideManager.loadImage(bnd_act_register.cvAvatar.imgImg, url)
                     })

@@ -5,12 +5,12 @@ import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.AttributeSet
-import android.widget.EditText
+import androidx.appcompat.widget.AppCompatEditText
 import com.dimfcompany.akcslclient.base.extensions.*
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.BehaviorSubject
 
-class MyEtWithObserv : EditText
+class MyEtWithObserv : AppCompatEditText
 {
     constructor(context: Context) : super(context)
     {
@@ -27,10 +27,6 @@ class MyEtWithObserv : EditText
         custom_init()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
-    {
-        custom_init()
-    }
 
     val str_dummy: String? = null
     val br_text: BehaviorSubject<Optional<String>> = BehaviorSubject.createDefault(Optional(str_dummy))
